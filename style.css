@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex; 
+}
+
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background: #2c3e50;
+    color: white;
+    padding: 30px 20px;
+    position: fixed; 
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+.sidebar h2 {
+    color: #3498db;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.sidebar a {
+    color: #bdc3c7;
+    text-decoration: none;
+    display: block;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover, .sidebar a.active {
+    background: #34495e;
+    color: white;
+    transform: translateX(5px);
+}
+
+.logout {
+    border: 1px solid #e74c3c;
+    color: #e74c3c !important;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.logout:hover {
+    background: #e74c3c !important;
+    color: white !important;
+}
+
+.main-content {
+    margin-left: 260px; 
+    width: calc(100% - 260px);
+    padding: 40px;
+    min-height: 100vh;
+}
+
+.container-small {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
+
+h2 { margin-bottom: 20px; color: #2c3e50; }
+
+label { display: block; margin-bottom: 8px; font-weight: 600; color: #555; }
+
+input, textarea, select {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.btn-block {
+    width: 100%;
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-block:hover { background: #2980b9; }
+
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.pass { background: #d4edda; color: #155724; }
+.fail { background: #f8d7da; color: #721c24; }
