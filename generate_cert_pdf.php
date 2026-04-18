@@ -37,7 +37,7 @@ $pdf->Ln(10);
 $pdf->SetFont('Arial', '', 18);
 $pdf->Cell(0, 10, 'has successfully completed the', 0, 1, 'C');
 $pdf->SetFont('Arial', 'B', 22);
-$pdf->Cell(0, 15, 'CODEQUEST LEARNING PATHway', 0, 1, 'C');
+$pdf->Cell(0, 15, 'CODEQUEST LEARNING PATHWAY', 0, 1, 'C');
 
 $pdf->Ln(20);
 $pdf->SetFont('Arial', '', 14);
