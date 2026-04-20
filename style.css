@@ -8,39 +8,97 @@ body {
     /* Notion-style font stack */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: #fdfcff; 
-    
-    /* Background Design: Purple dot-grid */
-    background-image: radial-gradient(#e8e0f5 1.5px, transparent 1.5px);
-    background-size: 30px 30px;
-    
     color: #1a1a1a;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden; /* Para hindi lumabas ang scrollbars dahil sa background shapes */
+    position: relative;
 }
 
-/* Ang "Box" o Card - Ginawang 500px para mas malaki */
-.notion-card, .card {
-    background: white;
+/* --- Background Design Area --- */
+.bg-visuals {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Nasa likod ng card */
+}
+
+/* Floating Shapes */
+.shape {
+    position: absolute;
+    background: rgba(81, 45, 168, 0.03); /* Napakalamlam na purple */
+    border-radius: 50%;
+    animation: float 15s infinite ease-in-out;
+}
+
+.shape-1 {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    left: -50px;
+}
+
+.shape-2 {
+    width: 200px;
+    height: 200px;
+    bottom: 10%;
+    right: 15%;
+    background: rgba(126, 87, 194, 0.02);
+    animation-duration: 20s;
+}
+
+.shape-3 {
+    width: 100px;
+    height: 100px;
+    top: 30%;
+    right: 30%;
+    background: rgba(81, 45, 168, 0.04);
+    animation-duration: 12s;
+}
+
+/* Dot Grid Pattern Overlay */
+.bg-grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#e8e0f5 1.5px, transparent 1.5px);
+    background-size: 30px 30px;
+    opacity: 0.6;
+}
+
+/* --- Simple Float Animation --- */
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+/* --- Login Card Design --- */
+.notion-card {
+    background: rgba(255, 255, 255, 0.95); /* Semi-transparent white */
     width: 500px; 
     padding: 50px;
-    border-radius: 16px;
+    border-radius: 20px;
     border: 1px solid #ede7f6;
-    box-shadow: 0 10px 30px rgba(81, 45, 168, 0.05);
+    box-shadow: 0 15px 35px rgba(81, 45, 168, 0.07);
+    backdrop-filter: blur(5px); /* Blur effect sa likod ng card */
+    z-index: 10;
 }
 
 /* Header Section (Centered) */
-.header-section, h2 {
+.header-section {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .main-title {
-    font-size: 32px;
+    font-size: 36px;
     font-weight: 800;
-    color: #512da8; /* MongoDB style structure but Purple */
-    letter-spacing: -0.5px;
+    color: #512da8; /* Purple Theme */
+    letter-spacing: -1px;
 }
 
 .sub-title {
@@ -63,8 +121,7 @@ label {
     color: #512da8;
 }
 
-/* Inputs and Selects (Larger and cleaner) */
-input, select {
+input {
     width: 100%;
     padding: 14px 18px;
     margin-bottom: 24px;
@@ -76,14 +133,14 @@ input, select {
     transition: all 0.2s ease;
 }
 
-input:focus, select:focus {
+input:focus {
     outline: none;
     border-color: #7e57c2;
     background: #ffffff;
     box-shadow: 0 0 0 4px rgba(126, 87, 194, 0.1);
 }
 
-/* Purple MongoDB Style Button */
+/* Purple Button */
 .btn-block {
     width: 100%;
     background: #512da8;
@@ -101,11 +158,11 @@ input:focus, select:focus {
 .btn-block:hover {
     background: #4527a0;
     box-shadow: 0 4px 15px rgba(81, 45, 168, 0.2);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
 }
 
 /* Footer Section */
-.card-footer, .register-footer {
+.card-footer {
     margin-top: 30px;
     text-align: center;
     font-size: 14px;
@@ -114,12 +171,12 @@ input:focus, select:focus {
     padding-top: 20px;
 }
 
-.card-footer a, .register-footer a {
+.card-footer a {
     color: #512da8;
     text-decoration: none;
     font-weight: 600;
 }
 
-.card-footer a:hover, .register-footer a:hover {
+.card-footer a:hover {
     text-decoration: underline;
 }
