@@ -23,19 +23,32 @@ if(isset($_POST['login'])){
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>CodeQuest Login</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-    <div class="card" style="width: 400px;">
-        <h2 style="text-align: center; margin-bottom: 20px;">Login</h2>
+<body>
+    <div class="notion-card">
+        <div class="header-section">
+            <h1 class="main-title">CodeQuest</h1>
+            <p class="sub-title">A journey for coder!</p>
+        </div>
+        
         <form method="POST">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit" name="login" class="btn-block">Login</button>
+            <label>Username</label>
+            <input type="text" name="username" placeholder="Enter username" required>
+            
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Enter password" required>
+            
+            <button type="submit" name="login" class="btn-block">Continue to Quest</button>
         </form>
-        <p style="margin-top:15px;">New here? <a href="index.php">Create account</a></p>
+        
+        <div class="card-footer">
+            New here? <a href="register.php">Create account</a>
+        </div>
     </div>
 </body>
 </html>
