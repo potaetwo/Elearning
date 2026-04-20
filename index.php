@@ -3,12 +3,13 @@
         <div class="bg-grid"></div>
         <div class="shape shape-1"></div>
         <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
     </div>
 
     <div class="notion-card">
         <div class="header-section">
             <h1 class="main-title">CodeQuest</h1>
-            <p class="sub-title">Start your coding journey</p>
+            <p class="sub-title">Create your account to start the quest</p>
         </div>
 
         <form method="POST">
@@ -24,7 +25,7 @@
                 <option value="teacher">Teacher</option>
             </select>
             
-            <button type="submit" name="register" class="btn-block">Join the Quest</button>
+            <button type="submit" name="register" class="btn-block">Sign Up</button>
         </form>
 
         <div class="card-footer">
