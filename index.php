@@ -34,6 +34,13 @@ if(isset($_POST['register'])){
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="bg-visuals">
+        <div class="bg-grid"></div>
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
     <div class="notion-card">
         <div class="header-section">
             <h1 class="main-title">CodeQuest</h1>
