@@ -5,10 +5,9 @@
 }
 
 body {
-    /* Notion-style font stack */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: #fdfcff; 
-    /* Purple dot-grid background */
+    /* Purple dot-grid background for both pages */
     background-image: radial-gradient(#e8e0f5 1px, transparent 1px);
     background-size: 24px 24px;
     color: #1a1a1a;
@@ -18,17 +17,16 @@ body {
     height: 100vh;
 }
 
-/* Larger Container */
+/* Common Card for Login & Register */
 .notion-card {
     background: white;
-    width: 500px; /* Mas pinalaki ang width */
+    width: 500px; 
     padding: 50px;
     border-radius: 16px;
     border: 1px solid #ede7f6;
-    box-shadow: 0 10px 30px rgba(81, 45, 168, 0.05); /* Subtle purple shadow */
+    box-shadow: 0 10px 30px rgba(81, 45, 168, 0.05);
 }
 
-/* Center Aligned Header */
 .header-section {
     text-align: center;
     margin-bottom: 40px;
@@ -37,7 +35,7 @@ body {
 .main-title {
     font-size: 32px;
     font-weight: 800;
-    color: #512da8; /* Main Purple */
+    color: #512da8; 
     letter-spacing: -0.5px;
 }
 
@@ -47,7 +45,7 @@ body {
     margin-top: 8px;
 }
 
-/* Left Aligned Form Elements */
+/* Form Layout */
 form {
     text-align: left;
 }
@@ -60,25 +58,25 @@ label {
     color: #512da8;
 }
 
-input {
+input, select {
     width: 100%;
-    padding: 14px 18px; /* Mas malaking padding */
+    padding: 14px 18px;
     margin-bottom: 24px;
     border: 1px solid #d1c4e9;
     border-radius: 8px;
     background: #fbfaff;
     font-size: 16px;
     transition: all 0.2s ease;
+    font-family: inherit;
 }
 
-input:focus {
+input:focus, select:focus {
     outline: none;
     border-color: #7e57c2;
     background: #ffffff;
     box-shadow: 0 0 0 4px rgba(126, 87, 194, 0.1);
 }
 
-/* MongoDB Style Button but Purple */
 .btn-block {
     width: 100%;
     background: #512da8;
