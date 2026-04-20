@@ -1,3 +1,34 @@
+<?php 
+include 'db.php'; 
+if (session_status() === PHP_SESSION_NONE) { session_start(); }
+
+if(isset($_POST['login'])){
+    $u = mysqli_real_escape_string($conn, $_POST['username']); 
+    $p = $_POST['password'];
+
+    $stmt = $conn->prepare("SELECT id, role FROM users WHERE username = ? AND password = ?");
+    $stmt->bind_param("ss", $u, $p);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $user = $result->fetch_assoc();
+
+    if($user){
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['role'] = $user['role'];
+        header("Location: dashboard.php");
+        exit();
+    } else { 
+        echo "<script>alert('Invalid credentials');</script>"; 
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodeQuest - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
     <div class="bg-visuals">
         <div class="bg-grid"></div>
@@ -9,27 +40,22 @@
     <div class="notion-card">
         <div class="header-section">
             <h1 class="main-title">CodeQuest</h1>
-            <p class="sub-title">Create your account to start the quest</p>
+            <p class="sub-title">Welcome back! Please login to your account.</p>
         </div>
-
+        
         <form method="POST">
             <label>Username</label>
-            <input type="text" name="username" placeholder="Choose a username" required>
+            <input type="text" name="username" placeholder="Enter your username" required>
             
             <label>Password</label>
-            <input type="password" name="password" placeholder="Create a password" required>
+            <input type="password" name="password" placeholder="Enter your password" required>
             
-            <label>Register as</label>
-            <select name="role">
-                <option value="student">Student</option>
-                <option value="teacher">Teacher</option>
-            </select>
-            
-            <button type="submit" name="register" class="btn-block">Sign Up</button>
+            <button type="submit" name="login" class="btn-block">Login to Quest</button>
         </form>
 
         <div class="card-footer">
-            Already have an account? <a href="login.php">Login here</a>
+            New here? <a href="index.php">Create an account</a>
         </div>
     </div>
 </body>
+</html>
