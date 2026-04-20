@@ -23,39 +23,32 @@ if(isset($_POST['login'])){
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>CodeQuest Login</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="auth-page">
-    <div class="notion-page-container">
-        <div class="page-header">
-            <h1 class="main-title">CodeQuest: A journey for coder!</h1>
+<body>
+    <div class="notion-card">
+        <div class="header-section">
+            <span class="brand-icon">🍃</span>
+            <h1 class="main-title">CodeQuest</h1>
+            <p class="sub-title">A journey for coder!</p>
         </div>
-
-        <div class="notion-card">
-            <div class="card-header">
-                <span class="icon">🚀</span>
-                <h2>Login</h2>
-            </div>
+        
+        <form method="POST">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
             
-            <form method="POST">
-                <div class="input-group">
-                    <label>Username</label>
-                    <input type="text" name="username" placeholder="Enter your username..." required>
-                </div>
-
-                <div class="input-group">
-                    <label>Password</label>
-                    <input type="password" name="password" placeholder="••••••••" required>
-                </div>
-
-                <button type="submit" name="login" class="btn-block">Continue</button>
-            </form>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="••••••••" required>
             
-            <div class="card-footer">
-                <p>New here? <a href="register.php">Create account</a></p>
-            </div>
+            <button type="submit" name="login" class="btn-block">Sign In</button>
+        </form>
+        
+        <div class="card-footer">
+            New to CodeQuest? <a href="register.php">Create an account</a>
         </div>
     </div>
 </body>
